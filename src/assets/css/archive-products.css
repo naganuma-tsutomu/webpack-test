@@ -1,0 +1,205 @@
+@charset "UTF-8";
+.products {
+  margin: 0 0 3rem;
+}
+.products__head {
+  position: relative;
+  width: 100%;
+  margin: 0 0 3rem;
+  padding: 0 6.5rem;
+  text-align: center;
+}
+.products__head::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.1rem);
+  left: 0;
+  width: 100%;
+  height: 0.3rem;
+  background: #000000;
+}
+.products__head span {
+  position: relative;
+  padding: 0 1em;
+  background: #ffffee;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.products .itemlist {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 2rem;
+}
+.products .itemlist__block {
+  width: 47.5%;
+  margin: 0 1.5rem 3rem 0;
+}
+.products .itemlist__block:nth-child(even) {
+  margin: 0 0 3rem 0;
+}
+.products .itemlist__block a {
+  transition: 0.2s;
+}
+.products .itemlist__block a:active {
+  opacity: 0.6;
+}
+.products .itemlist__block .img {
+  margin: 0 0 1rem;
+}
+.products .itemlist__block .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.products .itemlist__block .description {
+  margin: 0 0 1.5rem;
+}
+.products .itemlist__block .description__name {
+  margin: 0 0 1rem;
+  color: #303030;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.products .itemlist__block .description__price {
+  color: #ff1500;
+  font-size: 1.5rem;
+}
+.products .itemlist__block .purchase__quantity {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1.5rem;
+  /* WebKit ブラウザで、input type="number" のスピンボタンを非表示にする。 */
+  /* Firefox で、input type="number" のスピンボタンを非表示にする。また、入力欄の値表示を中央寄せにし、高さをボタンのサイズに合わせる。 */
+  /*ボタンのサイズを 35 × 35 CSS ピクセルにする。*/
+  /* ステッパーコンポーネントの横幅を指定する。 */
+}
+.products .itemlist__block .purchase__quantity label {
+  margin: 0 1rem 0 0;
+  font-size: 1.6rem;
+}
+.products .itemlist__block .purchase__quantity .inputblock {
+  display: flex;
+  align-items: center;
+}
+.products .itemlist__block .purchase__quantity input[type=number]::-webkit-outer-spin-button, .products .itemlist__block .purchase__quantity input[type=number]::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.products .itemlist__block .purchase__quantity input[type=number] {
+  width: 4rem;
+  height: 3rem;
+  border: 0.1rem solid #cccccc;
+  background: #ffffff;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.products .itemlist__block .purchase__quantity button.btn-number {
+  width: 3rem;
+  height: 3rem;
+  background: #cccccc;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+.products .itemlist__block .purchase__quantity button.btn-number.plus {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+.products .itemlist__block .purchase__quantity button.btn-number.minus {
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+.products .itemlist__block .purchase__quantity div.input-group {
+  width: 16rem;
+}
+.products .itemlist__block .purchase__cart {
+  position: relative;
+  width: 100%;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  padding: 0 1rem 0 3.5rem;
+  border-radius: 0.6rem;
+  box-shadow: 0rem 0.3rem 1rem 0.1rem rgba(0, 0, 0, 0.2);
+  background: #ffbe3b;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+.products .itemlist__block .purchase__cart img {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 1.6rem;
+}
+
+@media screen and (min-width: 1025px) {
+  .topimage {
+    height: 52rem;
+  }
+  .topimage img {
+    width: 100%;
+    height: 100%;
+  }
+  .container {
+    display: flex;
+    flex-direction: initial;
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+  .side {
+    display: block;
+    width: 24rem;
+    margin: 0 3rem 0 0;
+  }
+  .side__head {
+    margin: 0 0 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .side ul li {
+    height: 3.8rem;
+    line-height: 3.8rem;
+    border-bottom: 0.1rem dotted #707070;
+    font-size: 1.4rem;
+    transition: 0.3s;
+  }
+  .side ul li:hover, .side ul li.active {
+    background: #ffbe3b;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .side ul li a {
+    display: block;
+    margin: 0 0 0 0.5rem;
+  }
+  .side ul li.second a {
+    margin: 0 0 0 1.9rem;
+  }
+  .side ul li.third a {
+    margin: 0 0 0 3.1rem;
+  }
+  .side ul li:first-child {
+    border-top: 0.1rem solid #303030;
+  }
+  .products {
+    width: calc(100% - 27rem);
+  }
+  .products .itemlist__block {
+    width: 30.9%;
+    margin: 0 2.5rem 3rem 0;
+  }
+  .products .itemlist__block:nth-child(even) {
+    margin: 0 2.5rem 3rem 0;
+  }
+  .products .itemlist__block:nth-child(3n) {
+    margin: 0 0 3rem 0;
+  }
+  .products .itemlist__block a:hover {
+    opacity: 0.6;
+  }
+}
+/*# sourceMappingURL=archive-products.css.map */

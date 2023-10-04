@@ -1,0 +1,304 @@
+@charset "UTF-8";
+.productsection {
+  margin: 3rem 0 0 0;
+  padding: 0 2rem;
+}
+.productsection__item {
+  margin: 0 0 3rem;
+}
+.productsection__item .img {
+  margin: 0 0 2rem;
+}
+.productsection__item .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.productsection__item .detail .description {
+  margin: 0 0 1.5rem;
+}
+.productsection__item .detail .description__name {
+  margin: 0 0 1rem;
+  color: #303030;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.productsection__item .detail .description__price {
+  margin: 0 0 1.5rem;
+  color: #ff1500;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.productsection__item .detail .description__price span {
+  margin: 0 0.5rem 0 0;
+  font-size: 1.2rem;
+}
+.productsection__item .detail .description__fee {
+  margin: 0 0 0.5rem;
+  color: #0066c0;
+  font-size: 1.2rem;
+}
+.productsection__item .detail .description__feeinfo {
+  margin: 0 0 2rem;
+  font-size: 1.2rem;
+}
+.productsection__item .detail .description__feeinfo i {
+  margin: 0 0.5rem 0 0;
+  color: #98a6b5;
+}
+.productsection__item .detail .description__productsinfo {
+  line-height: 1.8;
+  margin: 0 0 2rem;
+}
+.productsection__item .detail .purchase__quantity {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1.5rem;
+  /* WebKit ブラウザで、input type="number" のスピンボタンを非表示にする。 */
+  /* Firefox で、input type="number" のスピンボタンを非表示にする。また、入力欄の値表示を中央寄せにし、高さをボタンのサイズに合わせる。 */
+  /*ボタンのサイズを 35 × 35 CSS ピクセルにする。*/
+  /* ステッパーコンポーネントの横幅を指定する。 */
+}
+.productsection__item .detail .purchase__quantity label {
+  margin: 0 1rem 0 0;
+  font-size: 1.6rem;
+}
+.productsection__item .detail .purchase__quantity .inputblock {
+  display: flex;
+  align-items: center;
+}
+.productsection__item .detail .purchase__quantity input[type=number]::-webkit-outer-spin-button, .productsection__item .detail .purchase__quantity input[type=number]::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.productsection__item .detail .purchase__quantity input[type=number] {
+  width: 4rem;
+  height: 3rem;
+  border: 0.1rem solid #cccccc;
+  background: #ffffff;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.productsection__item .detail .purchase__quantity button.btn-number {
+  width: 3rem;
+  height: 3rem;
+  background: #cccccc;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+.productsection__item .detail .purchase__quantity button.btn-number.plus {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+.productsection__item .detail .purchase__quantity button.btn-number.minus {
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+.productsection__item .detail .purchase__quantity div.input-group {
+  width: 16rem;
+}
+.productsection__item .detail .purchase__cart {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  line-height: 6rem;
+  padding: 0 1rem 0 3.5rem;
+  border-radius: 0.6rem;
+  box-shadow: 0rem 0.3rem 1rem 0.1rem rgba(0, 0, 0, 0.2);
+  background: #ffbe3b;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+.productsection__item .detail .purchase__cart img {
+  position: absolute;
+  top: 50%;
+  left: 8rem;
+  transform: translateY(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.productsection__another {
+  margin: 0 0 0;
+}
+.productsection__another .recommended, .productsection__another .viewhistory {
+  margin: 0 0 3rem;
+}
+.productsection__another .recommended__head, .productsection__another .viewhistory__head {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.productsection__another .recommended .recocontainer ul, .productsection__another .recommended .viewcontainer ul, .productsection__another .viewhistory .recocontainer ul, .productsection__another .viewhistory .viewcontainer ul {
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+}
+.productsection__another .recommended .recocontainer ul::-webkit-scrollbar, .productsection__another .recommended .viewcontainer ul::-webkit-scrollbar, .productsection__another .viewhistory .recocontainer ul::-webkit-scrollbar, .productsection__another .viewhistory .viewcontainer ul::-webkit-scrollbar {
+  display: none;
+}
+.productsection__another .recommended .recocontainer ul .recoblock, .productsection__another .recommended .recocontainer ul .viewblock, .productsection__another .recommended .viewcontainer ul .recoblock, .productsection__another .recommended .viewcontainer ul .viewblock, .productsection__another .viewhistory .recocontainer ul .recoblock, .productsection__another .viewhistory .recocontainer ul .viewblock, .productsection__another .viewhistory .viewcontainer ul .recoblock, .productsection__another .viewhistory .viewcontainer ul .viewblock {
+  position: relative;
+  width: 100%;
+  margin: 0 1rem 0 0;
+}
+.productsection__another .recommended .recocontainer ul .recoblock a:active, .productsection__another .recommended .recocontainer ul .viewblock a:active, .productsection__another .recommended .viewcontainer ul .recoblock a:active, .productsection__another .recommended .viewcontainer ul .viewblock a:active, .productsection__another .viewhistory .recocontainer ul .recoblock a:active, .productsection__another .viewhistory .recocontainer ul .viewblock a:active, .productsection__another .viewhistory .viewcontainer ul .recoblock a:active, .productsection__another .viewhistory .viewcontainer ul .viewblock a:active {
+  opacity: 0.8;
+}
+.productsection__another .recommended .recocontainer ul .recoblock:last-child, .productsection__another .recommended .recocontainer ul .viewblock:last-child, .productsection__another .recommended .viewcontainer ul .recoblock:last-child, .productsection__another .recommended .viewcontainer ul .viewblock:last-child, .productsection__another .viewhistory .recocontainer ul .recoblock:last-child, .productsection__another .viewhistory .recocontainer ul .viewblock:last-child, .productsection__another .viewhistory .viewcontainer ul .recoblock:last-child, .productsection__another .viewhistory .viewcontainer ul .viewblock:last-child {
+  margin: 0;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__picbox, .productsection__another .recommended .recocontainer ul .viewblock__picbox, .productsection__another .recommended .viewcontainer ul .recoblock__picbox, .productsection__another .recommended .viewcontainer ul .viewblock__picbox, .productsection__another .viewhistory .recocontainer ul .recoblock__picbox, .productsection__another .viewhistory .recocontainer ul .viewblock__picbox, .productsection__another .viewhistory .viewcontainer ul .recoblock__picbox, .productsection__another .viewhistory .viewcontainer ul .viewblock__picbox {
+  position: relative;
+  width: 13rem;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__picbox_rank, .productsection__another .recommended .recocontainer ul .viewblock__picbox_rank, .productsection__another .recommended .viewcontainer ul .recoblock__picbox_rank, .productsection__another .recommended .viewcontainer ul .viewblock__picbox_rank, .productsection__another .viewhistory .recocontainer ul .recoblock__picbox_rank, .productsection__another .viewhistory .recocontainer ul .viewblock__picbox_rank, .productsection__another .viewhistory .viewcontainer ul .recoblock__picbox_rank, .productsection__another .viewhistory .viewcontainer ul .viewblock__picbox_rank {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 30%;
+  height: 30%;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__picbox_item, .productsection__another .recommended .recocontainer ul .viewblock__picbox_item, .productsection__another .recommended .viewcontainer ul .recoblock__picbox_item, .productsection__another .recommended .viewcontainer ul .viewblock__picbox_item, .productsection__another .viewhistory .recocontainer ul .recoblock__picbox_item, .productsection__another .viewhistory .recocontainer ul .viewblock__picbox_item, .productsection__another .viewhistory .viewcontainer ul .recoblock__picbox_item, .productsection__another .viewhistory .viewcontainer ul .viewblock__picbox_item {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__textbox, .productsection__another .recommended .recocontainer ul .viewblock__textbox, .productsection__another .recommended .viewcontainer ul .recoblock__textbox, .productsection__another .recommended .viewcontainer ul .viewblock__textbox, .productsection__another .viewhistory .recocontainer ul .recoblock__textbox, .productsection__another .viewhistory .recocontainer ul .viewblock__textbox, .productsection__another .viewhistory .viewcontainer ul .recoblock__textbox, .productsection__another .viewhistory .viewcontainer ul .viewblock__textbox {
+  margin: 1rem 0 0;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__textbox_name, .productsection__another .recommended .recocontainer ul .viewblock__textbox_name, .productsection__another .recommended .viewcontainer ul .recoblock__textbox_name, .productsection__another .recommended .viewcontainer ul .viewblock__textbox_name, .productsection__another .viewhistory .recocontainer ul .recoblock__textbox_name, .productsection__another .viewhistory .recocontainer ul .viewblock__textbox_name, .productsection__another .viewhistory .viewcontainer ul .recoblock__textbox_name, .productsection__another .viewhistory .viewcontainer ul .viewblock__textbox_name {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__textbox_price, .productsection__another .recommended .recocontainer ul .viewblock__textbox_price, .productsection__another .recommended .viewcontainer ul .recoblock__textbox_price, .productsection__another .recommended .viewcontainer ul .viewblock__textbox_price, .productsection__another .viewhistory .recocontainer ul .recoblock__textbox_price, .productsection__another .viewhistory .recocontainer ul .viewblock__textbox_price, .productsection__another .viewhistory .viewcontainer ul .recoblock__textbox_price, .productsection__another .viewhistory .viewcontainer ul .viewblock__textbox_price {
+  color: #ec0000;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__textbox_price span, .productsection__another .recommended .recocontainer ul .viewblock__textbox_price span, .productsection__another .recommended .viewcontainer ul .recoblock__textbox_price span, .productsection__another .recommended .viewcontainer ul .viewblock__textbox_price span, .productsection__another .viewhistory .recocontainer ul .recoblock__textbox_price span, .productsection__another .viewhistory .recocontainer ul .viewblock__textbox_price span, .productsection__another .viewhistory .viewcontainer ul .recoblock__textbox_price span, .productsection__another .viewhistory .viewcontainer ul .viewblock__textbox_price span {
+  font-size: 1.2rem;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__more, .productsection__another .recommended .recocontainer ul .viewblock__more, .productsection__another .recommended .viewcontainer ul .recoblock__more, .productsection__another .recommended .viewcontainer ul .viewblock__more, .productsection__another .viewhistory .recocontainer ul .recoblock__more, .productsection__another .viewhistory .recocontainer ul .viewblock__more, .productsection__another .viewhistory .viewcontainer ul .recoblock__more, .productsection__another .viewhistory .viewcontainer ul .viewblock__more {
+  display: block;
+  position: relative;
+  width: 10rem;
+  height: 100%;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__more_block, .productsection__another .recommended .recocontainer ul .viewblock__more_block, .productsection__another .recommended .viewcontainer ul .recoblock__more_block, .productsection__another .recommended .viewcontainer ul .viewblock__more_block, .productsection__another .viewhistory .recocontainer ul .recoblock__more_block, .productsection__another .viewhistory .recocontainer ul .viewblock__more_block, .productsection__another .viewhistory .viewcontainer ul .recoblock__more_block, .productsection__another .viewhistory .viewcontainer ul .viewblock__more_block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__more_block img, .productsection__another .recommended .recocontainer ul .viewblock__more_block img, .productsection__another .recommended .viewcontainer ul .recoblock__more_block img, .productsection__another .recommended .viewcontainer ul .viewblock__more_block img, .productsection__another .viewhistory .recocontainer ul .recoblock__more_block img, .productsection__another .viewhistory .recocontainer ul .viewblock__more_block img, .productsection__another .viewhistory .viewcontainer ul .recoblock__more_block img, .productsection__another .viewhistory .viewcontainer ul .viewblock__more_block img {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0 1rem;
+}
+.productsection__another .recommended .recocontainer ul .recoblock__more_block p, .productsection__another .recommended .recocontainer ul .viewblock__more_block p, .productsection__another .recommended .viewcontainer ul .recoblock__more_block p, .productsection__another .recommended .viewcontainer ul .viewblock__more_block p, .productsection__another .viewhistory .recocontainer ul .recoblock__more_block p, .productsection__another .viewhistory .recocontainer ul .viewblock__more_block p, .productsection__another .viewhistory .viewcontainer ul .recoblock__more_block p, .productsection__another .viewhistory .viewcontainer ul .viewblock__more_block p {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1025px) {
+  .container {
+    display: flex;
+    flex-direction: initial;
+    width: 100%;
+    max-width: 100rem;
+    margin: 8rem auto 0;
+  }
+  .side {
+    display: block;
+    width: 24rem;
+    margin: 0 3rem 0 0;
+  }
+  .side__head {
+    margin: 0 0 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .side ul li {
+    height: 3.8rem;
+    line-height: 3.8rem;
+    border-bottom: 0.1rem dotted #707070;
+    font-size: 1.4rem;
+    transition: 0.3s;
+  }
+  .side ul li:hover, .side ul li.active {
+    background: #ffbe3b;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .side ul li a {
+    display: block;
+    margin: 0 0 0 0.5rem;
+  }
+  .side ul li.second a {
+    margin: 0 0 0 1.9rem;
+  }
+  .side ul li.third a {
+    margin: 0 0 0 3.1rem;
+  }
+  .side ul li:first-child {
+    border-top: 0.1rem solid #303030;
+  }
+  .productsection {
+    width: calc(100% - 27rem);
+  }
+  .productsection__item {
+    display: flex;
+  }
+  .productsection__item .img {
+    width: 28rem;
+    height: 28rem;
+  }
+  .productsection__item .detail {
+    width: calc(100% - 31rem);
+    margin: 0 0 0 3rem;
+  }
+  .productsection__item .detail .description__name {
+    font-size: 2rem;
+  }
+  .productsection__item .detail .description__price {
+    font-size: 2.2rem;
+  }
+  .productsection__item .detail .description__price span {
+    font-size: 1.6rem;
+  }
+  .productsection__item .detail .description__fee, .productsection__item .detail .description__feeinfo {
+    font-size: 1.4rem;
+  }
+  .productsection__item .detail .description__productsinfo {
+    line-height: 1.6;
+    color: #303030;
+    font-size: 1.6rem;
+  }
+  .productsection__item .detail .purchase__cart {
+    font-size: 1.8rem;
+  }
+  .productsection__item .detail .purchase__cart img {
+    left: 10rem;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .productsection__another .recommended .recocontainer ul .recoblock, .productsection__another .recommended .recocontainer ul .viewblock, .productsection__another .recommended .viewcontainer ul .recoblock, .productsection__another .recommended .viewcontainer ul .viewblock, .productsection__another .viewhistory .recocontainer ul .recoblock, .productsection__another .viewhistory .recocontainer ul .viewblock, .productsection__another .viewhistory .viewcontainer ul .recoblock, .productsection__another .viewhistory .viewcontainer ul .viewblock {
+    position: relative;
+    margin: 0 1rem 0 0;
+  }
+  .productsection__another .recommended .recocontainer ul .recoblock a:hover, .productsection__another .recommended .recocontainer ul .viewblock a:hover, .productsection__another .recommended .viewcontainer ul .recoblock a:hover, .productsection__another .recommended .viewcontainer ul .viewblock a:hover, .productsection__another .viewhistory .recocontainer ul .recoblock a:hover, .productsection__another .viewhistory .recocontainer ul .viewblock a:hover, .productsection__another .viewhistory .viewcontainer ul .recoblock a:hover, .productsection__another .viewhistory .viewcontainer ul .viewblock a:hover {
+    opacity: 0.8;
+  }
+  .productsection__another .recommended .recocontainer ul .recoblock__picbox, .productsection__another .recommended .recocontainer ul .viewblock__picbox, .productsection__another .recommended .viewcontainer ul .recoblock__picbox, .productsection__another .recommended .viewcontainer ul .viewblock__picbox, .productsection__another .viewhistory .recocontainer ul .recoblock__picbox, .productsection__another .viewhistory .recocontainer ul .viewblock__picbox, .productsection__another .viewhistory .viewcontainer ul .recoblock__picbox, .productsection__another .viewhistory .viewcontainer ul .viewblock__picbox {
+    position: relative;
+    width: 10rem;
+  }
+}
+/*# sourceMappingURL=single-products.css.map */

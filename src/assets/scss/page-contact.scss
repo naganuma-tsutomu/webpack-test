@@ -1,0 +1,741 @@
+// contact form7   送信ボタン下に表示されるメッセージを非表示
+.wpcf7-response-output {
+    display: none;
+}
+
+.formcontainer {
+    margin: 3rem 2rem;
+    padding: 3rem 2rem;
+    border-radius: .4rem;
+    box-shadow: 0rem 0rem 1rem .1rem rgba(0, 0, 0, .2);
+    background: #ffffff;
+}
+
+// フォーム上部
+.siteattention {
+    margin: 0 auto 4rem;
+
+    &__head {
+        margin: 0 0 3rem;
+        text-align: center;
+
+        span {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+    }
+
+    &__title {
+        display: block;
+        margin: 0 0 1rem 0;
+        color: #0066c0;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    // 注意事項
+    &__list {
+        list-style: auto !important;
+        list-style-type: decimal;
+        margin: 0 0 3rem 0;
+        padding: 0 0 0 2.5rem;
+
+        li {
+            line-height: 2;
+            color: #0066c0;
+            font-size: 1.3rem;
+        }
+    }
+
+    // ステップフォーム
+    &__stepblock {
+        width: 100%;
+
+        ul {
+            display: flex;
+
+            @for $i from 1 through 3 {
+                $class_name: ".stepform0#{$i}";
+                #{$class_name} {
+                    width: calc(100% / 3);
+                    &__block {
+                        position: relative;
+
+                        // .stepform01じゃなかったら
+                        @if $i != 1 {
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                top: 1rem;
+                                right: 0;
+                                left: -40%;
+                                transform: translateY(-50%);
+                                width: 80%;
+                                height: .1rem;
+                                background: #cccccc;
+                            }
+                        }
+
+                        &_circle {
+                            display: block;
+                            width: 2rem;
+                            height: 2rem;
+                            margin: 0 auto 2rem;
+                            border-radius: 50%;
+                            background: #cccccc;
+                        }
+
+                        &_txt {
+                            color: #cccccc;
+                            font-size: 1.6rem;
+                            font-weight: bold;
+                            text-align: center;
+                        }
+                    }
+
+                    &.current {
+                        #{$class_name}__block {
+                            // .stepform01じゃなかったら
+                            @if $i != 1 {
+                                &::before {
+                                    background: #0066c0;
+                                }
+                            }
+
+                            &_circle {
+                                background: #0066c0;
+                            }
+                            &_txt {
+                                color: #0066c0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sitecontact {
+    margin: 0 auto;
+
+    &__block-1 {
+        width: 100%;
+
+        .formblock {
+            margin: 0 0 2rem;
+            padding: 0;
+            border: none;
+            background: #ffffff;
+
+            .input {
+                display: block;
+                width: 100%;
+
+                &__box {
+                    display: block;
+                    width: 100%;
+                    margin: 0 0 2rem 0;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    &_th {
+                        padding: 0 0 1rem 0;
+                        color: #0066c0;
+                        font-size: 1.5rem;
+                        @mixin recany {
+                            display: block;
+                            width: 5rem;
+                            height: 2.5rem;
+                            line-height: 2.5rem;
+                            margin: 0 1rem 0 0;
+                            border-radius: 2rem;
+                            color: #ffffff;
+                            font-size: 1.2rem;
+                            text-align: center;
+                        }
+
+                        span {
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        .required {
+                            &:before {
+                                @include recany;
+                                content: "必須";
+                                background: #ff1500;
+                            }
+                        }
+
+                        .any {
+                            &:before {
+                                @include recany;
+                                content: "任意";
+                                background: #cccccc;
+                            }
+                        }
+                    }
+
+                    &_td {
+                        display: block;
+                        padding: 0;
+                        font-size: 1.3rem;
+                        vertical-align: middle;
+
+                        .wpcf7-form-control-wrap {
+                            input[type="text"], input[type="email"], select {
+                                display: inline;
+                                width: 100%;
+                                height: 4rem;
+                                padding: .8rem 1rem;
+                                border-radius: .4rem;
+                                background: #efefef;
+                                text-align: left;
+
+                                /* Chrome, Safari */
+                                &::-webkit-input-placeholder {
+                                    color: #cccccc;
+                                }
+
+                                /* Firefox */
+                                &::-moz-placeholder {
+                                    color: #cccccc;
+                                }
+
+                                /* Firefox 18以前 */
+                                &:-moz-placeholder {
+                                    color: #cccccc;
+                                }
+                            }
+
+                            textarea {
+                                display: inline;
+                                width: 100%;
+                                padding: .8rem 1rem;
+                                border-radius: .4rem;
+                                background: #efefef;
+                                text-align: left;
+
+                                /* Chrome, Safari */
+                                &::-webkit-input-placeholder {
+                                    color: #cccccc;
+                                }
+
+                                /* Firefox */
+                                &::-moz-placeholder {
+                                    color: #cccccc;
+                                }
+
+                                /* Firefox 18以前 */
+                                &:-moz-placeholder {
+                                    color: #cccccc;
+                                }
+                            }
+                        }
+
+                        .tel_numberbox {
+                            display: flex;
+                            align-items: center;
+
+                            .first_number, .last-number {
+                                width: 25%;
+                            }
+
+                            .input__box_symbol {
+                                display: block;
+                                width: auto;
+                                line-height: 4rem;
+                                padding: 0;
+                                text-align: center;
+
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    width: 1rem;
+                                    margin: 0 1rem;
+                                    border-top: .1rem solid #1a1a1a;
+                                }
+                            }
+
+                            .search {
+                                width: 25%;
+                                margin: 0;
+                                padding: 0 0 0 2rem;
+
+                                button {
+                                    width: 100%;
+                                    line-height: 3rem;
+                                    border-radius: .4rem;
+                                    background-color: #f57500;
+                                    color: #ffffff;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .buttonblock {
+            &__step-1 {
+                display: flex;
+                justify-content: space-around;
+
+                @mixin stepBtn01 {
+                    width: calc(90% / 2);
+                    height: 3.5rem;
+                    line-height: 3.5rem;
+                    margin: 0 auto;
+                    border-radius: .4rem;
+                    color: #ffffff;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                &_clear {
+                    @include stepBtn01;
+                    background: #cccccc;
+                }
+
+                &_confirm {
+                    @include stepBtn01;
+                    background: #ffbe3b;
+                }
+            }
+        }
+    }
+
+    &__block-2 {
+        display: none;
+        width: 100%;
+        background: #ffffff;
+
+        .formblock {
+            .con-input {
+                width: 100%;
+
+                &__box {
+                    display: grid;
+                    width: 100%;
+                    margin: 0 0 2rem 0;
+                    padding: 0 0 1rem 0;
+                    border-bottom: .1rem solid #cccccc;
+
+                    &.input_img {
+                        #confirm_postcontact_img {
+                            max-width: 20rem;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    &_th {
+                        padding: 0 0 1rem 0;
+                        color: #0066c0;
+                        font-size: 1.4rem;
+                    }
+
+                    &_td {
+                        display: block;
+                        padding: 0 1rem;
+                        font-size: 1.4rem;
+                        font-weight: bold;
+                        vertical-align: middle;
+
+                        .wpcf7-form-control-wrap {
+                            input[type="text"], input[type="email"], select, textarea {
+                                display: inline;
+                                width: 100%;
+                                padding: .8rem 1rem;
+                                border: .1rem solid #cccccc;
+                                border-radius: .4rem;
+                                background: #ffffff;
+                                text-align: left;
+                            }
+                        }
+
+                        .tel_numberbox {
+                            display: flex;
+                            align-items: center;
+
+                            .first_number, .last-number {
+                                width: 25%;
+                            }
+
+                            .input__box_symbol {
+                                display: block;
+                                width: auto;
+                                line-height: 4rem;
+                                padding: 0;
+                                text-align: center;
+
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    width: 1rem;
+                                    margin: 0 1rem;
+                                    border-top: .1rem solid #1a1a1a;
+                                }
+                            }
+
+                            .search {
+                                width: 25%;
+                                margin: 0;
+                                padding: 0 0 0 2rem;
+
+                                button {
+                                    width: 100%;
+                                    line-height: 3rem;
+                                    border-radius: .4rem;
+                                    background-color: #f57500;
+                                    color: #ffffff;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .acceptance {
+            margin: 0 0 2rem 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+
+            a {
+                margin: 0 .5rem 0 0;
+                color: #0066c0;
+                text-decoration: underline;
+            }
+
+            .wpcf7-form-control-wrap {
+                display: inline-block;
+                width: 100%;
+
+                .wpcf7-form-control {
+                    display: inline-block;
+                    width: 100%;
+
+                    .wpcf7-list-item {
+                        display: table;
+                        margin: 0 auto;
+
+                        label {
+                            cursor: pointer;
+                            display: table-cell;
+                            vertical-align: middle;
+
+                            input {
+                                width: 1.7rem;
+                                height: 1.7rem;
+                                border-radius: .4rem;
+                            }
+
+                            .wpcf7-list-item-label {
+                                padding: 0 0 0 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .buttonblock {
+            &__step-2 {
+                display: flex;
+                justify-content: center;
+
+                &_edit {
+                    width: calc(90% / 2);
+                    margin: 0 auto;
+                    padding: 1rem 0;
+                    border-radius: .4rem;
+                    background: #cccccc;
+                    color: #ffffff;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                &_send {
+                    width: calc(90% / 2);
+                    margin: 0 auto;
+                    padding: 1rem 0;
+                    border-radius: .4rem;
+                    background: #ffbe3b;
+                    color: #ffffff;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &__block-3 {
+        display: none;
+        width: 100%;
+        margin: 0 0 3rem 0;
+        padding: 0;
+        background: #ffffff;
+
+        p {
+            display: block;
+            margin: 0 0 3rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .buttonblock {
+            &__step-3 {
+                display: block;
+                text-align: center;
+
+                &_back {
+                    margin: 0 auto;
+                    border: .2rem solid #ff2300;
+                    background: #ffffff;
+                    color: #ff2300;
+                    &:active {
+                        background: #ff2300;
+                        color: #ffffff;
+                    }
+
+                    &:hover {
+                        background: #ff2300;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+
+    .authentication {
+        display: none;
+
+        &__btn {
+            display: block;
+            width: 15rem;
+            height: 3.5rem;
+            line-height: 3.5rem;
+            margin: 0 auto;
+            border-radius: .4rem;
+            background: #ffbe3b;
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .formcontainer {
+        max-width: 80rem;
+        margin: 8rem auto;
+        padding: 8rem 5rem;
+    }
+
+    .siteattention {
+        &__head {
+            margin: 0 0 5rem;
+
+            span {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .sitecontact {
+        width: 100%;
+        border: none !important;
+
+        &__block-1 {
+            .formblock {
+                margin: 0 0 5rem;
+
+                .input {
+                    display: grid;
+                    padding: 0;
+                    background: none;
+
+                    &__box {
+                        display: inline-table;
+                        margin: 0;
+                        border-bottom: .1rem solid #cccccc;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        &_th {
+                            width: 23.5rem;
+                            margin: 1rem 0;
+                            padding: 0;
+                            font-size: 1.4rem;
+                            vertical-align: middle;
+
+                            &.vertical {
+                                padding: 1rem 0 0;
+                                vertical-align: top;
+                            }
+                        }
+
+                        &_td {
+                            margin: 1rem 0 1rem 1rem;
+
+                            .wpcf7-form-control-wrap {
+                                input[type="text"], input[type="email"], select {
+                                    max-width: 50rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .buttonblock {
+                &__step-1 {
+                    justify-content: center;
+
+                    @mixin stepBtn01 {
+                        width: 20rem;
+                        height: 4.5rem;
+                        line-height: 4.5rem;
+                        font-size: 1.4rem;
+                    }
+                    &_clear {
+                        @include stepBtn01;
+                        margin: 0 2rem 0 0;
+                    }
+
+                    &_confirm {
+                        @include stepBtn01;
+                        margin: 0 0 0 2rem;
+                    }
+                }
+            }
+        }
+
+        &__block-2 {
+            .formblock {
+                .con-input {
+                    margin: 0 0 5rem 0;
+
+                    &__box {
+                        display: inline-table;
+                        margin: 0;
+
+                        &_th {
+                            width: 23.5rem;
+                            padding: 2rem 1rem 2rem 2rem;
+                            font-size: 1.4rem;
+                            text-align: right;
+                            vertical-align: middle;
+
+                            &.label_img {
+                                vertical-align: top;
+                            }
+                        }
+
+                        &_td {
+                            padding: 2rem 1rem 2rem 2rem;
+                            font-size: 1.4rem;
+                            word-break: break-all;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+
+            .buttonblock {
+                &__step-2 {
+                    @mixin stepBtn01 {
+                        width: 20rem;
+                        height: 4.5rem;
+                        line-height: 4.5rem;
+                        padding: 0;
+                        font-size: 1.4rem;
+                    }
+
+                    &_edit {
+                        @include stepBtn01;
+                        margin: 0 2rem 0 0;
+                    }
+
+                    &_send {
+                        @include stepBtn01;
+                        margin: 0 0 0 2rem;
+                    }
+                }
+            }
+
+            .acceptance {
+                margin: 0 0 3rem 0;
+            }
+        }
+
+        &__block-3 {
+            display: none;
+            width: 60%;
+            margin: 0 auto;
+            padding: 0;
+            background: #ffffff;
+
+            p {
+                margin: 0 0 4rem;
+                &.thankstitle {
+                    margin: 3rem 0 4rem;
+                    font-size: 2rem;
+                }
+
+                &.thankstxt {
+                    font-size: 1.4rem;
+                }
+
+                &.thankspstsc {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .buttonblock {
+                &__step-3 {
+                    display: block;
+                    text-align: center;
+
+                    &_back {
+                        display: block;
+                        margin: 0 auto;
+                        border: .2rem solid #f57500;
+                        background: #f57500;
+                        color: #ffffff;
+
+                        &:active {
+                            background: #ffffff;
+                            color: #f57500;
+                        }
+
+                        &:hover {
+                            background: #ffffff;
+                            color: #f57500;
+                        }
+                    }
+                }
+            }
+        }
+        .authentication {
+            &__btn {
+                width: 20rem;
+                height: 4.5rem;
+                line-height: 4.5rem;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

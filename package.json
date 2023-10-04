@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "いわき養蜂場 サイトソース",
+  "main": "index.php",
+  "scripts": {
+    "dev":"npx webpack -w --mode development",
+    "pro":"npx webpack -w --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@webpack-cli/init": "^1.1.3",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.88.2",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
