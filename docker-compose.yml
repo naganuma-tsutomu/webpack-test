@@ -17,11 +17,11 @@ services:
      container_name: beachvolleyball-yotsukura-wordpress
      depends_on:
        - db
-     image: wordpress:latest
+     build: ./
      volumes:
         - ./src:/var/www/html/wp-content/themes/iwaki-bee-yard
         - wp_data:/var/www/html
-        # - ./php.ini /usr/local/etc/php/php.ini
+        - ./wp-install.sh:/tmp/wp-install.sh
      ports:
        - "${IP}:8080:80"
      restart: always
