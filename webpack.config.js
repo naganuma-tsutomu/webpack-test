@@ -4,47 +4,31 @@ const Ip = process.env.IP; // .env.IP 環境変数の取得
 
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
 const WebpackWatchedGlobEntries = require("webpack-watched-glob-entries-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-
+// ファイルパス
+const filePath = {
+  js: './src/assets/js/',
+  sass: './src/assets/scss/',
+};
 const entries = WebpackWatchedGlobEntries.getEntries(
   [
-    path.resolve(__dirname, "./src/assets/js/*.js"),
-    // path.resolve(__dirname, "./src/assets/scss/*.scss"),
+    path.resolve(__dirname, `${filePath.js}*.js`),
+    path.resolve(__dirname, `${filePath.sass}*.scss`),
   ],
   {
-    ignore: path.resolve(__dirname, "./src/assets/js/_*.js"),
-    // ignore: path.resolve(__dirname, "./src/assets/scss/_*.scss"),
+    ignore: path.resolve(__dirname, `${filePath.js}_*.js`),
+    ignore: path.resolve(__dirname, `${filePath.sass}_*.scss`),
   }
 )();
 
-const filePath = {
-  js: './src/js/',
-  pug: './src/pug/',
-  sass: './src/scss/',
-};
-
-/* Sassファイル読み込みの定義*/
-const entriesScss = WebpackWatchedGlobEntries.getEntries([path.resolve(__dirname, "./src/assets/scss/*.scss")], {
-  ignore: path.resolve(__dirname, `${filePath.sass}**/_*.scss`),
-})();
-console.log(entriesScss);
-const cssGlobPlugins = (entriesScss) => {
-  return Object.keys(entriesScss).map(
-    (key) =>
-      new MiniCssExtractPlugin({
-        //出力ファイル名
-        filename: `./css/${key}.css`,
-      })
-  );
-};
-
 module.exports = {
   // コンパイルモード
-  mode: "production",
+  // mode: "production",
   // エントリーポイントの設定
-  entry: 
+  entry:
     // コンパイル対象のファイルを指定
     entries,
   // 出力設定
@@ -68,9 +52,20 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimizer: [
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+      // `...`, 　ここを追加することでjsのminifyの設定を維持しつつcssをminifyできる（スプレッド演算子のイメージ）。
+      new CssMinimizerPlugin(),
+    ],
+  },
   plugins: [
-    ...cssGlobPlugins(entriesScss),
-    new FixStyleOnlyEntriesPlugin(), // CSS別出力時の不要JSファイルを削除
+    // ...cssGlobPlugins(entriesScss),
+    new MiniCssExtractPlugin({
+      //出力ファイル名
+      filename: `./css/[name].css`,
+    }),
+    new RemoveEmptyScriptsPlugin(), // CSS別出力時の不要JSファイルを削除
     new BrowserSyncPlugin({
       host: "localhost",
       files: ["src/*", "src/assets/**/*"],

@@ -1,32 +1,10 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/assets/js/front-page.js":
-/*!*************************************!*\
-  !*** ./src/assets/js/front-page.js ***!
-  \*************************************/
-/***/ (() => {
-
-eval("// const hh = document.getElementById(\"form\");\n// hh.addEventListener(\"click\", function () {\n//   gsap.to(\".schedule\", {\n//     x: -100,\n//   });\n// });\n\n//# sourceURL=webpack://test/./src/assets/js/front-page.js?");
-
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/assets/js/front-page.js"]();
-/******/ 	
+var __webpack_exports__ = {};
+// const hh = document.getElementById("form");
+// hh.addEventListener("click", function () {
+//   gsap.to(".schedule", {
+//     x: -100,
+//   });
+// });
 /******/ })()
 ;
